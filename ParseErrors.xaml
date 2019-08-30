@@ -6,10 +6,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>530,848</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>829,1257</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ParseErrors_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="22">
+    <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -32,10 +32,11 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -52,9 +53,13 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ParseErrors" sap:VirtualizedContainerService.HintSize="490,994" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ParseErrors" sap:VirtualizedContainerService.HintSize="789,1137" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="IssueTypeDT" />
       <Variable x:TypeArguments="sd:DataColumn" Name="IssueTypeColumn" />
@@ -64,17 +69,17 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DataTable="[IssueTypeDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="452,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;IssueType&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="True" AutoIncrement="False" ColumnName="IssueType" DataTable="[FilterDataTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" MaxLength="100" Unique="False" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FilterDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="452,614" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:BuildDataTable DataTable="[IssueTypeDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="751,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;IssueType&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="True" AutoIncrement="False" ColumnName="Resolution" DataTable="[FilterDataTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="751,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" MaxLength="100" Unique="False" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FilterDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="751,757" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="406,469" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence sap:VirtualizedContainerService.HintSize="705,612" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="IssueType" />
+              <Variable x:TypeArguments="x:String" Name="Resolution" />
               <Variable x:TypeArguments="sd:DataColumn" Name="IssueDataColoumn" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
@@ -82,7 +87,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="368,377" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="667,520" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="ErrorDescription" />
                 <Variable x:TypeArguments="x:String" Name="value" />
@@ -92,7 +97,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="330,59" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign sap:VirtualizedContainerService.HintSize="629,59" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[ErrorDescription]</OutArgument>
                 </Assign.To>
@@ -100,19 +105,33 @@
                   <InArgument x:TypeArguments="x:String">[row("ErrorMessage").ToString]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Dictionary workflow" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Dictionary.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="errorDict">[ErrorCache]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="key">[ErrorDescription]</InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="value">[IssueType]</OutArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-              </ui:InvokeWorkflowFile>
-              <Assign sap:VirtualizedContainerService.HintSize="330,59" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <If Condition="[ErrorDescription = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="629,230" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Assign sap:VirtualizedContainerService.HintSize="258,59" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Resolution]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">INVALID_RECORD</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Then>
+                <If.Else>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Dictionary workflow" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Dictionary.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="errorDict">[ErrorCache]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="key">[ErrorDescription]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="value">[Resolution]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </If.Else>
+              </If>
+              <Assign sap:VirtualizedContainerService.HintSize="629,59" sap2010:WorkflowViewState.IdRef="Assign_5">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:Object">[row("IssueType")]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Object">[row("Resolution")]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Object">[IssueType]</InArgument>
+                  <InArgument x:TypeArguments="x:Object">[Resolution]</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
@@ -120,6 +139,6 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[FilterDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="data\Report.csv" sap:VirtualizedContainerService.HintSize="452,87" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[FilterDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="data\Report.csv" sap:VirtualizedContainerService.HintSize="751,87" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
   </Sequence>
 </Activity>
